@@ -32,4 +32,38 @@ a {
 
 a:hover {
     text-decoration: underline;
+}/* Estilo para o corpo do texto */
+#corpo {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #0000FF; /* Azul */
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.2rem;
+    color: #00008B; /* Azul Marinho */
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0000FF; /* Azul */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
