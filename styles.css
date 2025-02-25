@@ -7,8 +7,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #ADD8E6; /* Azul Claro */
+    color: #00008B; /* Azul Marinho */
     padding: 20px;
 }
 
@@ -18,10 +18,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    color: #00008B; /* Azul Marinho */
 }
 
 h1 {
-    color: #2c3e50;
+    color: #0000FF; /* Azul */
     font-size: 2.5rem;
 }
 
@@ -37,5 +38,5 @@ ul {
 
 li {
     font-size: 1rem;
-    color: #2c3e50;
+    color: #0000FF; /* Azul */
 }
