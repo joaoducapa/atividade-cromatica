@@ -1,42 +1,35 @@
-/* Resetando algumas configurações padrão */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ADD8E6; /* Azul Claro */
-    color: #00008B; /* Azul Marinho */
-    padding: 20px;
-}
-
-#introducao {
+/* Estilo para o corpo do texto */
+#corpo {
     background-color: #ffffff;
     padding: 30px;
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: #00008B; /* Azul Marinho */
 }
 
-h1 {
+h2 {
+    font-size: 1.8rem;
     color: #0000FF; /* Azul */
-    font-size: 2.5rem;
-}
-
-p {
-    font-size: 1.2rem;
-    color: #555;
+    margin-top: 20px;
 }
 
 ul {
     list-style-type: none;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
-li {
-    font-size: 1rem;
+ul li {
+    font-size: 1.2rem;
+    color: #00008B; /* Azul Marinho */
+    margin-bottom: 10px;
+}
+
+a {
     color: #0000FF; /* Azul */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
