@@ -1,164 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmonias Cromáticas no Design Gráfico</title>
-    <style>
-        /* Definição da paleta monocromática */
-        :root {
-            --cor-primaria: #2E86C1; /* Azul principal */
-            --cor-secundaria: #5DADE2; /* Azul mais claro */
-            --cor-terciaria: #AED6F1; /* Azul ainda mais claro */
-            --cor-texto: #1B4F72; /* Azul escuro para textos */
-            --cor-fundo: #EAF2F8; /* Fundo claro */
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
-            margin: 0;
-            padding: 20px;
-        }
-        header {
-            background-color: var(--cor-primaria);
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        section {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border-bottom: 2px solid var(--cor-primaria);
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: var(--cor-primaria);
-            border-bottom: 2px solid var(--cor-primaria);
-            padding-bottom: 5px;
-        }
-        img {
-            max-width: 100%;
-            display: block;
-            margin: 10px auto;
-        }
-        a {
-            color: var(--cor-secundaria);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        th, td {
-            border: 1px solid var(--cor-primaria);
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: var(--cor-secundaria);
-            color: white;
-        }
-        /* Destaques para termos importantes */
-        .destaque {
-            color: var(--cor-primaria);
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café da Roça - Assinatura de Café Artesanal</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
-    <header>
-        <h1>Harmonias Cromáticas no Design Gráfico</h1>
-        <p><strong>Autor:</strong> João Gabriel Rodrigues Ferreira</p>
-        <p><strong>Harmonia escolhida:</strong> Monocromática</p>
-        <p><strong>Paleta utilizada:</strong> Azul (#2E86C1, #5DADE2, #AED6F1, #1B4F72, #EAF2F8)</p>
-    </header>
-    <section>
-        <h2>O que é o Círculo Cromático?</h2>
-        <p>O <span class="destaque">círculo cromático</span> é uma ferramenta essencial para designers, permitindo a organização das cores de maneira visual e sistemática. Ele auxilia na compreensão de como as cores se relacionam e como podem ser combinadas de maneira harmônica. As cores no círculo são dispostas em uma sequência que segue a disposição das cores no espectro visível. Cada cor pode ser combinada com outras de maneiras que criam diferentes efeitos visuais e emocionais.</p>
-        <img src="https://poraodastintas.com.br/wp-content/uploads/2019/08/harmonia_dividido.png" alt="Círculo Cromático">
-    </section>
-    <section>
-        <h2>Quais são as <span class="destaque">harmonias cromáticas</span>?</h2>
-        <p>As <span class="destaque">harmonias cromáticas</span> são estratégias usadas no design gráfico para escolher cores que se complementam ou criam contrastes agradáveis ao olho humano. As principais harmonias cromáticas são:</p>
+  <header>
+    <h1>Café da Roça</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#semestre">Semestre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Descubra o sabor único do café artesanal cultivado por pequenos produtores das montanhas brasileiras. Nosso compromisso é oferecer qualidade, sustentabilidade e uma conexão direta entre quem planta e quem aprecia um bom café.</p>
+  </section>
+
+  <section id="produtos">
+    <h2>Produtos</h2>
+    <div class="produto">
+      <h3>Café Orgânico - 250g</h3>
+      <p>R$ 25,00</p>
+      <button class="btn-add" data-produto="Café Orgânico - 250g" data-preco="25">Adicionar ao carrinho</button>
+    </div>
+    <div class="produto">
+      <h3>Assinatura Mensal</h3>
+      <p>R$ 70,00</p>
+      <button class="btn-add" data-produto="Assinatura Mensal" data-preco="70">Adicionar ao carrinho</button>
+    </div>
+  </section>
+
+  <section id="semestre">
+    <h2>Linha do Tempo do Semestre</h2>
+    <div class="botoes-semestre">
+      <button class="semestre-btn" data-semestre="1">1º Semestre</button>
+      <button class="semestre-btn" data-semestre="2">2º Semestre</button>
+      <button class="semestre-btn" data-semestre="3">3º Semestre</button>
+      <button class="semestre-btn" data-semestre="4">4º Semestre</button>
+    </div>
+    <div class="conteudo-semestre" id="conteudo-semestre" tabindex="0"></div>
+  </section>
+
+  <section id="carrinho">
+    <h2>Carrinho de Compras</h2>
+    <ul class="carrinho-lista"></ul>
+    <p>Total: R$ <span id="total">0,00</span></p>
+    <button id="finalizar" disabled>Finalizar Compra</button>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <button class="botao-topo">&#8679; Topo</button>
+
+  <footer>
+    <p>&copy; 2025 Café da Roça. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Botão voltar ao topo
+    const botaoTopo = document.querySelector('.botao-topo');
+    botaoTopo.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+    // Conteúdos dos semestres
+    const textosSemestres = {
+      1: `
+        <h3>1º Semestre</h3>
+        <p>Início da jornada com foco em agricultura sustentável e cultivo do café orgânico.</p>
         <ul>
-            <li><strong>Monocromática:</strong> A harmonia monocromática utiliza uma única cor em diferentes tonalidades, saturações e brilhos. Essa abordagem cria uma sensação de uniformidade e suavidade, sendo ideal para designs que buscam transmitir simplicidade e elegância.</li>
-            <li><strong>Análoga:</strong> Utiliza cores que estão ao lado uma da outra no círculo cromático. Essa harmonia transmite sensação de harmonia e equilíbrio. É frequentemente usada para criar designs mais suaves e naturais.</li>
-            <li><strong>Complementar:</strong> Cores opostas no círculo cromático, como o azul e o laranja. Essa harmonia cria um contraste forte, gerando um visual mais dinâmico e impactante. Pode ser usada para destacar elementos importantes de um design.</li>
-            <li><strong>Tríade:</strong> Composta por três cores equidistantes no círculo cromático, como o vermelho, amarelo e azul. Essa harmonia é vibrante e energética, trazendo equilíbrio visual através do contraste entre as cores primárias.</li>
+          <li>Plantio manual e cuidado especial com mudas.</li>
+          <li>Utilização de técnicas tradicionais para manter o solo fértil.</li>
+          <li>Parcerias com comunidades locais.</li>
         </ul>
-        <img src="https://lh6.googleusercontent.com/proxy/PTStg4vyxndWAXtNK5fjX-nKgBcPCgqx3JG1QE7hcmdXHNa8EyYZDfJW75F1rI51m5eXVgBwWyXxaiEac-vCs6nGmroW5uyddzLDHbyEi2czBqL0ZpoH6QB5kCluIgkLtzdr8Zo" alt="Exemplo de Harmonias Cromáticas">
-    </section>
-    <section>
-        <h2>Para que serve cada <span class="destaque">harmonia cromática</span>?</h2>
-        <p>Cada tipo de <span class="destaque">harmonia cromática</span> tem um efeito visual distinto que pode influenciar a percepção do usuário. Veja abaixo os efeitos de cada harmonia:</p>
+      `,
+      2: `
+        <h3>2º Semestre</h3>
+        <p>Expansão da colheita e implementação de processos de torrefação artesanal.</p>
         <ul>
-            <li><strong>Monocromática:</strong> Cria uma atmosfera sofisticada e coerente. Como usa apenas uma cor, facilita a criação de designs limpos e sem excessos.</li>
-            <li><strong>Complementar:</strong> Oferece um contraste forte entre as cores, criando uma sensação de intensidade e movimento. É útil quando se deseja destacar elementos do design, como botões ou chamadas para ação.</li>
-            <li><strong>Análoga:</strong> Garante um visual harmonioso e equilibrado, com transições suaves entre as cores. Ideal para designs mais naturais, como sites de bem-estar ou projetos de arte.</li>
-            <li><strong>Tríade:</strong> Oferece um design vibrante e dinâmico, com uma combinação de cores contrastantes que mantêm o equilíbrio visual. É usada quando se deseja transmitir energia e criatividade.</li>
+          <li>Colheita seletiva dos grãos maduros.</li>
+          <li>Processamento natural e torrefação média.</li>
+          <li>Início das entregas regionais.</li>
         </ul>
-    </section>
-    <section>
-        <h2>Como escolher a cor dos <span class="destaque">elementos do site</span>?</h2>
-        <p>A escolha das cores dos elementos de um site é fundamental para criar uma experiência de usuário agradável e eficiente. A seguir, apresentamos dicas para escolher as cores corretamente:</p>
+      `,
+      3: `
+        <h3>3º Semestre</h3>
+        <p>Aprimoramento da logística e ampliação do leque de sabores.</p>
         <ul>
-            <li><strong>Cabeçalhos:</strong> Os cabeçalhos devem ser destacados, então a escolha de uma cor forte e visível ajuda a tornar as informações mais acessíveis. Por exemplo, o azul escuro é ideal para transmitir autoridade e clareza.</li>
-            <li><strong>Parágrafos:</strong> Para o corpo do texto, escolha uma cor mais neutra e suave. Cores como cinza ou um tom mais escuro da cor principal ajudam a manter a legibilidade sem distrações.</li>
-            <li><strong>Bordas:</strong> Usar cores suaves e discretas para bordas pode ajudar a delimitar as áreas do site sem sobrecarregar o visual.</li>
-            <li><strong>Links:</strong> Links devem se destacar, então escolha uma cor contrastante com o fundo e o texto. Uma cor complementar ao fundo pode ser eficaz para guiar o usuário através do site.</li>
+          <li>Novos perfis de torra: clara, média e escura.</li>
+          <li>Criação de blends exclusivos para assinantes.</li>
+          <li>Expansão para outras regiões do Brasil.</li>
         </ul>
-    </section>
-    <section>
-        <h2>Importância das <span class="destaque">cores no design</span></h2>
-        <p>As <span class="destaque">cores</span> no design têm um impacto direto sobre a percepção visual e emocional do usuário. Cada cor pode evocar emoções diferentes:</p>
+      `,
+      4: `
+        <h3>4º Semestre</h3>
+        <p>Consolidação da marca e integração com cafeterias parceiras.</p>
         <ul>
-            <li><strong>Cores quentes</strong> (como vermelho, laranja e amarelo) transmitem energia, paixão e entusiasmo. São ideais para chamar atenção e criar um ambiente dinâmico.</li>
-            <li><strong>Cores frias</strong> (como azul, verde e roxo) transmitem calma, serenidade e tranquilidade. São usadas para criar ambientes relaxantes e sofisticados.</li>
+          <li>Parcerias com cafeterias locais para degustações.</li>
+          <li>Lançamento de edições limitadas.</li>
+          <li>Participação em feiras e eventos gastronômicos.</li>
         </ul>
-    </section>
-    <section>
-        <h2>Dicas para combinar <span class="destaque">cores</span> corretamente</h2>
-        <p>Combinando cores corretamente, você pode criar designs eficientes e visualmente agradáveis. Aqui estão algumas dicas para fazer boas escolhas:</p>
-        <ul>
-            <li>Certifique-se de que haja contraste suficiente entre o fundo e o texto para garantir boa legibilidade.</li>
-            <li>Evite usar muitas cores no design, pois isso pode poluir visualmente o site e dificultar a navegação do usuário.</li>
-            <li>Teste sua paleta de cores em diferentes dispositivos para garantir que o design fique consistente em diversas telas.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Ferramentas para escolher <span class="destaque">paletas</span></h2>
-        <table>
-            <tr>
-                <th>Ferramenta</th>
-                <th>Link</th>
-            </tr>
-            <tr>
-                <td>Adobe Color</td>
-                <td><a href="https://color.adobe.com/" target="_blank">Acesse aqui</a></td>
-            </tr>
-            <tr>
-                <td>Coolors</td>
-                <td><a href="https://coolors.co/" target="_blank">Acesse aqui</a></td>
-            </tr>
-            <tr>
-                <td>Canva Colors</td>
-                <td><a href="https://www.canva.com/colors/" target="_blank">Acesse aqui</a></td>
-            </tr>
-            <tr>
-                <td>Paletton</td>
-                <td><a href="http://paletton.com/" target="_blank">Acesse aqui</a></td>
-            </tr>
-            <tr>
-                <td>Color Hunt</td>
-                <td><a href="https://colorhunt.co/" target="_blank">Acesse aqui</a></td>
-            </tr>
-            <tr>
-                <td>Khroma</td>
-                <td><a href="http://khroma.co/" target="_blank">Acesse aqui</a></td>
-            </tr>
-        </table>
-    </section>
+      `
+    };
+
+    const botoesSemestre = document.querySelectorAll('.semestre-btn');
+    const conteudoSemestre = document.getElementById('conteudo-semestre');
+
+    botoesSemestre.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const semestre = btn.dataset.semestre;
+        conteudoSemestre.innerHTML = textosSemestres[semestre];
+        conteudoSemestre.style.display = 'block';
+        conteudoSemestre.focus();
+      });
+    });
+
+    // Carrinho
+    const botoesAdd = document.querySelectorAll('.btn-add');
+    const carrinhoLista = document.querySelector('.carrinho-lista');
+    const totalSpan = document.getElementById('total');
+    const btnFinalizar = document.getElementById('finalizar');
+
+    let carrinho = [];
+
+    function atualizarCarrinho() {
+      carrinhoLista.innerHTML = '';
+      let total = 0;
+      carrinho.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}`;
+        carrinhoLista.appendChild(li);
+        total += item.preco;
+      });
+      totalSpan.textContent = total.toFixed(2).replace('.', ',');
+      btnFinalizar.disabled = carrinho.length === 0;
+    }
+
+    botoesAdd.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const nome = botao.dataset.produto;
+        const preco = parseFloat(botao.dataset.preco);
+        carrinho.push({ nome, preco });
+        atualizarCarrinho();
+      });
+    });
+
+    btnFinalizar.addEventListener('click', () => {
+      alert('Compra finalizada com sucesso! Obrigado por apoiar os pequenos produtores.');
+      carrinho = [];
+      atualizarCarrinho();
+    });
+  </script>
 </body>
+
 </html>
